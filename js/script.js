@@ -3,7 +3,18 @@ var surnames = ["Bianchi","Neri","Rossi","Verdi","Gialli"];
 console.log(surnames);
 // 1. chiedi all'utente il cognome
 surnames.push(prompt("Inserisci il tuo Cognome"));
-surnames.sort();
+function confrontaS(a,b) {
+    minA = a.toLowerCase();
+    minB = b.toLowerCase();
+    if (minA < minB) { 
+        return -1; 
+    } else if (minA > minB) { 
+        return 1; 
+    } else { 
+        return 0; 
+    }
+}    
+surnames.sort(confrontaS);
 console.log(surnames);
 // 3. stampa la lista ordinata alfabeticamente
 for (var i = 0; i < surnames.length; i++){
